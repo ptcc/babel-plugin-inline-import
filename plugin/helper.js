@@ -36,7 +36,7 @@ export default class BabelInlineImportHelper {
       throw new Error(`Path '${givenPath}' could not be found for '${reference}'`);
     }
 
-    return fs.readFileSync(mod.src).toString();
+    return fs.readFileSync(mod.src,{encoding:'utf8'}).toString();
   }
 
   static transformRelativeToRootPath(path, rootPathSuffix) {
